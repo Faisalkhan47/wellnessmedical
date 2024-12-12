@@ -8,7 +8,7 @@ export default function DrawerComp() {
         <>
             <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)} >
             
-                <List sx={{ width: "10rem",backgroundColor:"white" }}>
+                <List sx={{ width: "10rem",backgroundColor:"white",marginTop:"2rem" }}>
                     <ListItemButton>
                         <ListItemIcon>
                             <Link to="/" style={{ textDecoration: "none",color:"black" }}>

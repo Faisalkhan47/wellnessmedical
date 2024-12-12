@@ -1,161 +1,191 @@
-import { Box, Checkbox, FormControlLabel, FormGroup, Stack } from "@mui/material";
+import { Box, Checkbox, FormControlLabel, FormGroup, Stack, Grid, useMediaQuery, useTheme, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import DoctorListDrawer from "./drawercomponents/DoctorListDrawer";
+import { motion } from 'framer-motion';
+
 
 export default function DoctorsList() {
 
-    const [doctorList, setDoctorList] = useState([])
+    const theme = useTheme();
+    const isMatch = useMediaQuery(theme.breakpoints.down('lg'));
+
+    const [doctorList, setDoctorList] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/hospitals/getalldoctors')
+                const response = await axios.get('http://localhost:5000/hospitals/getalldoctors');
                 console.log(response.data);
                 setDoctorList(response.data);
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
         fetchData();
-    }, [])
+    }, []);
 
     return (
         <>
-            <Box sx={{ display: "flex", alignItems: 'flex-start', justifyContent: "flex-start",marginTop:'11rem' }}>
-                <Stack sx={{ marginTop: '7rem', marginLeft: '2rem', boxShadow: 'rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px', width: '18rem' }}>
-                    <FormGroup style={{ marginLeft: '1rem' }}>
-                        <h5 style={{ marginTop: '1rem', fontWeight: 'bold' }}>Doctors By Location</h5>
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Delhi" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Mumbai" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Lucknow" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Chennai" />
-                    </FormGroup>
-                    <FormGroup style={{ marginLeft: '1rem' }}>
-                        <h5 style={{ marginTop: '1rem', fontWeight: 'bold' }}>Speciality</h5>
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Aesthetic And Reconstructive Surgery" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Allergy" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Anaesthesia" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Arthroscopy & Sports Injury" />
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Audiology" />
-                    </FormGroup>
-                </Stack>
-                <Box
-                    sx={{
-                        marginTop: '7rem',
-                        marginLeft: '3rem',
-                        flexWrap: 'wrap',
-                        maxWidth: '70rem',
-                        gap: '0.5rem'
-                    }}
-                    direction="row"
-                    spacing={2}
-                >
+            <Box sx={{ display: "flex", alignItems: 'flex-start', justifyContent: "flex-start", marginTop: '11rem' }}>
+                <Stack sx={{ marginTop: '7rem', marginLeft: { xs: '1rem', lg: "2rem" }, boxShadow: 'rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px', width: '18rem', backgroundColor: { xs: "black", sm: "black", md: 'black', lg: "white", xl: "white" } }}>
                     {
-                        doctorList.map((di) =>
+                        isMatch ? (
+                            <DoctorListDrawer />
+                        ) : (
+                            <>
+                                <FormGroup style={{ marginLeft: '1rem' }}>
+                                    <h5 style={{ marginTop: '1rem', fontWeight: 'bold' }}>Doctors By Location</h5>
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Delhi" />
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Mumbai" />
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Lucknow" />
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Chennai" />
+                                </FormGroup>
+
+                                <FormGroup style={{ marginLeft: '1rem' }}>
+                                    <h5 style={{ marginTop: '1rem', fontWeight: 'bold' }}>Speciality</h5>
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Aesthetic And Reconstructive Surgery" />
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Allergy" />
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Anaesthesia" />
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Arthroscopy & Sports Injury" />
+                                    <FormControlLabel control={<Checkbox defaultChecked />} label="Audiology" />
+                                </FormGroup>
+                            </>
+                        )
+                    }
+
+                </Stack>
+
+
+
+                <Grid
+                    container
+                    spacing={2}
+                    sx={{ marginTop: '6rem', marginLeft: { xs: '0rem', lg: "2rem" }, width: { xs: "100%", sm: "100%", md: "100%", xl: "100%", lg: "100%" }, marginRight: { xs: "5rem" }, marginBottom: "2rem" }}
+                >
+                    {doctorList.map((di) => (
+                        <Grid
+                            item
+                            xs={12}
+                            sm={12}
+                            lg={6}
+                            key={di.doctorListid}
+                            component={motion.div}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: 'easeOut' }}
+                            whileHover={{ scale: 1.05 }}
+                        >
                             <Box
                                 sx={{
                                     boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-                                    height: '14rem',
-                                    width: '34rem',
-                                    marginLeft: '0.5rem',
+                                    height: { xs: '8', sm: '8', md: "14rem", lg: '16rem' },
+                                    width: { xs: '18rem', sm: '18rem', md: '30rem', lg: '34rem' },
                                     display: 'flex',
-                                    flexDirection: 'row',
-                                    alignItems: 'flex-start',
+                                    flexDirection: { xs: 'column', sm: 'row' },
+                                    alignItems: { xs: 'center', sm: 'flex-start' },
                                     padding: '1rem',
                                     backgroundColor: '#fff',
                                     borderRadius: '8px',
-                                }} key={di.doctorListid}
+                                    margin: '0 auto',
+                                }}
                             >
-                                <img
-                                    style={{
+                                <Box
+                                    component="img"
+                                    sx={{
                                         height: '10rem',
-                                        width: '14rem',
                                         objectFit: 'cover',
+                                        borderRadius: '8px',
                                     }}
                                     src={di.doctorimage}
-                                    alt=""
+                                    alt="Doctor"
                                 />
-                                <div
-                                    style={{
-                                        marginLeft: '1rem',
+                                <Box
+                                    sx={{
+                                        marginLeft: { xs: 0, sm: '1rem',lg:"4rem" },
+                                        marginTop: { xs: '1rem', sm: 0 },
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'flex-start',
+                                        width: '100%',
                                     }}
                                 >
-                                    <h4
-                                        style={{
-                                            margin: '0',
-                                            padding: '0',
-                                            fontSize: '1.25rem',
+                                    <Typography
+                                        variant="h4"
+                                        sx={{
+                                            margin: 0,
+                                            fontSize: { xs: '1rem', sm: '1.25rem' },
                                             fontWeight: 'bold',
                                             color: '#333',
                                         }}
                                     >
                                         {di.doctorname}
-                                    </h4>
-                                    <h6
-                                        style={{
+                                    </Typography>
+                                    <Typography
+                                        variant="subtitle1"
+                                        sx={{
                                             marginTop: '0.5rem',
-                                            marginBottom: '0.25rem',
-                                            fontSize: '1rem',
+                                            fontSize: { xs: '0.875rem', sm: '1rem' },
                                             color: '#555',
                                         }}
                                     >
                                         Specialist: {di.specialist}
-                                    </h6>
-                                    <h6
-                                        style={{
+                                    </Typography>
+                                    <Typography
+                                        variant="subtitle1"
+                                        sx={{
                                             marginTop: '0.25rem',
-                                            fontSize: '1rem',
+                                            fontSize: { xs: '0.875rem', sm: '1rem' },
                                             color: '#555',
                                         }}
                                     >
                                         Experience: {di.experience}
-                                    </h6>
-                                    <h6
-                                        style={{
+                                    </Typography>
+                                    <Typography
+                                        variant="subtitle1"
+                                        sx={{
                                             marginTop: '0.01rem',
-                                            fontSize: '1rem',
+                                            fontSize: { xs: '0.875rem', sm: '1rem' },
                                             color: '#555',
                                         }}
                                     >
-                                        Hospital:  {di.hospital}
-                                    </h6>
-                                    <h6
-                                        style={{
+                                        Hospital: {di.hospital}
+                                    </Typography>
+                                    <Typography
+                                        variant="subtitle1"
+                                        sx={{
                                             marginTop: '0.01rem',
-                                            fontSize: '1rem',
+                                            fontSize: { xs: '0.875rem', sm: '1rem' },
                                             color: '#555',
                                         }}
                                     >
                                         Gender: {di.gender}
-                                    </h6>
-                                    <h6
-                                        style={{
+                                    </Typography>
+                                    <Typography
+                                        sx={{
                                             marginTop: '2rem',
-                                            fontSize: '1rem',
+                                            fontSize: { xs: '0.875rem', sm: '1rem' },
                                             color: 'blue',
-                                            marginLeft: '2rem',
+                                            textAlign: { xs: 'center', sm: 'left' },
                                         }}
                                     >
-                                        <a
-                                            href="/dr-balbir-singh"
+                                        <Link
+                                            to={`/doctor/details/${di.detail}`}
                                             style={{
                                                 color: 'blue',
                                                 textDecoration: 'none',
                                             }}
                                         >
                                             View Profile
-                                        </a>
-                                    </h6>
-                                </div>
+                                        </Link>
+                                    </Typography>
+                                </Box>
                             </Box>
-                        )
-                    }
-                </Box>
+                        </Grid>
+                    ))}
+                </Grid>
+
             </Box>
         </>
-
-    )
-
+    );
 }

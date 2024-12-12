@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import Neurologist from './Neurologist.svg';
 import spine from './spine.svg';
@@ -112,34 +112,86 @@ export default function HospitalDetails() {
 
         <Box sx={{ marginTop: "11rem", width: { xs: "100%", sm: "100%", md: "100%", xl: "100%", lg: "100%" } }}>
 
-          <Stack>
-            <div id="carouselExample" className="carousel slide" style={{ marginTop: '5rem' }}>
-              <div className="carousel-inner" >
+          <Box
+            sx={{
+              width: { xs: "90%", lg: "60%" },
+              mx: "auto",
+            }}
+          >
+
+            <div id="carouselExample" className="carousel slide mt-2">
+              <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img style={{ width: { xs: "100%", sm: "100%", md: "100%", xl: "100%", lg: "100%" }, marginLeft: { xs: "2rem", sm: "3rem", lg: '5rem' } }} src={hospitalDetails.image1} className="d-block w-100" alt="..." />
+                  <img
+                    src={hospitalDetails.image1}
+                    alt="Hospital 1"
+                    className="d-block w-100"
+                    style={{
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      maxWidth: { xs: "90%", sm: "80%", lg: "60%" },
+                      maxHeight: "25rem",
+                      marginTop: "5rem",
+                      objectFit: "cover"
+                    }}
+                    
+                  />
                 </div>
                 <div className="carousel-item">
-                  <img style={{ width: { xs: "100%", sm: "100%", md: "100%", xl: "100%", lg: "100%" }, marginLeft: { xs: "2rem", sm: "3rem", lg: '5rem' } }} src={hospitalDetails.image2} className="d-block w-100" alt="..." />
+                  <img
+                    src={hospitalDetails.image2}
+                    alt="Hospital 2"
+                    className="d-block w-100"
+                    style={{
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      maxWidth: { xs: "90%", sm: "80%", lg: "60%" },
+                      maxHeight: "25rem",
+                      marginTop: "5rem",
+                      objectFit: "cover"
+                    }}
+                    
+                  />
                 </div>
                 <div className="carousel-item">
-                  <img style={{ width: { xs: "100%", sm: "100%", md: "100%", xl: "100%", lg: "100%" }, marginLeft: { xs: "2rem", sm: "3rem", lg: '5rem' } }} src={hospitalDetails.image3} className="d-block w-100" alt="..." />
-                </div>
-                <div className="carousel-item">
-                  <img style={{ width: { xs: "100%", sm: "100%", md: "100%", xl: "100%", lg: "100%" }, marginLeft: { xs: "2rem", sm: "3rem", lg: '5rem' } }} src={hospitalDetails.image3} className="d-block w-100" alt="..." />
+                  <img
+                    src={hospitalDetails.image3}
+                    alt="Hospital 3"
+                    className="d-block w-100"
+                    style={{
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      maxWidth: { xs: "90%", sm: "80%", lg: "60%" },
+                      maxHeight: "25rem",
+                      marginTop: "5rem",
+                      objectFit: "cover"
+                    }}
+                    
+                  />
                 </div>
               </div>
-              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
               </button>
-              <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Next</span>
               </button>
             </div>
-          </Stack>
+          </Box>
           <Box sx={{ width: { xs: "100%", sm: "100%", md: "100%", xl: "100%", lg: "100%" } }}>
-            <h1 style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '3rem' }}>{hospitalDetails.hospitalname}</h1>
+            <h1 style={{ marginTop: '1rem' }}>{hospitalDetails.hospitalname}</h1>
             <Box sx={{ height: '19rem', width: { xs: "100%", sm: "100%", md: "100%", xl: "57rem", lg: "57rem" }, backgroundColor: 'rgb(54, 69, 79)', marginLeft: { xs: "0.5rem", sm: "0.5rem", md: "3rem", lg: '19rem' } }}>
               <h6 style={{ color: 'white', marginLeft: '1rem' }}>{hospitalDetails.beds}</h6>
               <h6 style={{ color: 'white', marginLeft: '1rem' }}>{hospitalDetails.icubeds}</h6>

@@ -10,6 +10,7 @@ import livertransplant from "./livertransplant.svg"
 import bonemarrowsurgery from "./bonemarrowsurgery.svg"
 import weightloss from "./weightloss.svg"
 import { Link } from 'react-router-dom';
+import { Box } from '@mui/material';
 
 const treatments = [
   { name: "Cardiac Surgery", image: cardiacsurgery, link: "your-link-url" },
@@ -43,25 +44,31 @@ export default function FrontPageTreatmentsList() {
 
   return (
     <>
-      {treatments.slice(0, isSmallScreen ? 4 : treatments.length).map((treatment, index) => (
-        <Link to={treatment.link} style={{ textDecoration: 'none' }} key={index}>
-          <div
-            className="treatment-card"
-            style={{
-              boxShadow:
-                'rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset',
-              transition: 'transform 0.3s ease',
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-          >
-            <img src={treatment.image} alt={treatment.name} width="90rem" />
-            <h5 style={{ marginTop: '0.5rem', fontWeight: '900', color: 'black' }}>
-              {treatment.name}
-            </h5>
-          </div>
-        </Link>
-      ))}
-    </>
+  {treatments.slice(0, isSmallScreen ? 4 : 10 ).map((treatment, index) => (
+    <Link to={treatment.link} style={{ textDecoration: 'none' }} key={index}>
+      <Box
+        className="treatment-card"
+        sx={{
+          width: isSmallScreen ? '180px' : '200px',
+          padding: isSmallScreen ? '0.8rem' : '1rem',
+          textAlign: 'center',
+          borderRadius: '8px',
+          margin: '1rem',
+          boxShadow:
+            'rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset',
+          transition: 'transform 0.3s ease',
+        }}
+        onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+        onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+      >
+        <img src={treatment.image} alt={treatment.name} width="90rem" />
+        <h5 style={{ marginTop: '0.5rem', fontWeight: '900', color: 'black' }}>
+          {treatment.name}
+        </h5>
+      </Box>
+    </Link>
+  ))}
+</>
+
   );
 }

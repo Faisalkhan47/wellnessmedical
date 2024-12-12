@@ -40,16 +40,10 @@ export default function Navbar() {
 
                     <Box position="fixed" sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "2.8rem", mt: "0.5rem", marginLeft: { xs: "-3.5rem", sm: "-2rem", md: "-1rem", xl: "18rem", lg: "20rem" } }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', border: '3px solid black', width: { xs: "17rem", sm: "22rem", md: "28rem", lg: "30rem", xl: '40rem' }, height: { xs: "2rem", sm: "2rem", md: "2rem", lg: "2rem", xl: "2rem" }, marginRight: '10px' }}>
-                            <select style={{ height: '100%', fontSize: '16px', outline: 'none', padding: '0 10px', border: "bold" }}>
-                                <option value="Select">Select</option>
-                                <option value="doctors">Doctors</option>
-                                <option value="treatments">Treatments</option>
-                                <option value="hospitals">Hospitals</option>
-                            </select>
                             <input
                                 type="text"
-                                placeholder="Search..."
-                                style={{ flex: 1, height: '100%', fontSize: '16px', border: 'none', outline: 'none', paddingLeft: '10px' }}
+                                placeholder="Search Hospitals, Doctors, Procedures"
+                                style={{ flex: 1, height: '100%', fontSize: '14px', border: 'none', outline: 'none', paddingLeft: '10px' }}
                             />
                         </Box>
                         <Button sx={{ width: { xs: '6rem', sm: '7rem', md: '9rem', lg: "10rem", xl: "12rem" }, height: '2rem', fontSize: '20px', border: '3px solid black', color: 'black' }}>Search</Button >
@@ -76,10 +70,10 @@ export default function Navbar() {
                                 sx={{ fontSize: "1rem" }}
                             >
                                 <Link
-                                    to="tel:9643486864"
+                                    to="tel:+919953367487"
                                     style={{ textDecoration: "none", color: "inherit" }}
                                 >
-                                    9643486864
+                                    +919953367487
                                 </Link>
                             </Typography>
                             <Typography

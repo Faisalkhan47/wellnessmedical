@@ -1,31 +1,47 @@
-import { Stack } from "@mui/material";
-
+import { Box, Stack } from "@mui/material";
+import Cardiology from './Cardiology.jpg'
 export default function CardiologyMain() {
     return (
         <>
-            <Stack >
-                <Stack sx={{ marginTop: '14rem', color: 'rgb(20, 154, 137)', position: 'relative',backgroundColor:"rgb(231, 252, 255)" }}>
-                    <img
-                        style={{
-                            height: '18rem',
-                            width: '25rem',
+            <Stack sx={{ marginTop: "11rem", width: { xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" }, backgroundColor: "white" }}>
+                <Stack sx={{ marginTop: '4rem', color: 'rgb(20, 154, 137)', position: 'relative', width: { xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" }, flexDirection: { xs: "column", md: 'row' } }}>
+                <Box
+                        sx={{
                             position: 'absolute',
-                            top: '4rem',
-                            right: '7rem',
-                            margin: '1rem'
+                            top: { xs: "-3rem", sm: "-1rem", md: "3rem", lg: '3rem' },
+                            right: { sm: "18rem", md: "-4rem", lg: '2rem' },
+                            margin: '1rem',
+                            width: { xs: '80%', sm: '80%', md: '25rem' },
+                            height: 'auto',
+                            objectFit: 'contain',
                         }}
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe-ogOa3REoeFYRVvLKb-sjgn6eYogGLh5Rg&s"
-                        alt=""
-                        srcSet=""
-                    />
-                    <h2 style={{marginLeft:'3rem',fontWeight:'bold',marginTop:'2rem'}}>Cardiology</h2>
-                    <p style={{ width: '45rem', marginLeft: '3rem', textAlign:"start",marginTop:'1rem' }}>
-                    Cardiology is used when the medical specialization is related to the heart. It is a stream that specializes in dealing with the disorders which take place in the human heart. This field looks into the diagnosis and treatments of various kinds of heart disorders such as heart failure, congenital heart defects, coronary artery disease, Electrophysiology, and valvular heart disease.
+                    >
+                        <img
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                            }}
+                            src={Cardiology}
+                            alt=""
+                        />
+                    </Box>
+                    <Box
+                        sx={{
+                            marginTop: { xs: '13rem', sm: '13rem', md: '0rem' },
+                            width: { xs: '100%', sm: '70%', md: '50%', lg: '60%', xl: '60%' },
+                            marginLeft: { xs: '1rem', md: '3rem' },
+                        }}
+                    >
+                    <h3 style={{fontWeight:'bold',marginTop:'2rem',color: 'black'}}>Cardiology</h3>
+                    <p style={{ color: 'black', textAlign:"start",marginTop:'1rem' }}>
+                    Cardiology is the medical specialty focused on diagnosing, treating, and preventing diseases of the heart and blood vessels, collectively known as cardiovascular diseases (CVD). The scope of cardiology includes a range of conditions such as coronary artery disease (CAD), heart failure, arrhythmias, valvular heart disease, hypertension, atherosclerosis, and congenital heart defects.
                         <br/><br/>
-                        At GoMedii we cater to numerous patients under these categories. We have the best cardiologists in the top notch hospitals of the country and abroad. Cardiology in India to be specific is considered to be of great expertise. Our doctors are known for their experience and dedication all around the world.
+                        Coronary artery disease occurs when the arteries supplying blood to the heart become blocked or narrowed, leading to chest pain or heart attacks. Heart failure refers to the heart's inability to pump blood efficiently, causing fluid buildup and reduced oxygen supply. Arrhythmias are abnormal heart rhythms, which can be too fast, slow, or erratic, affecting the heart's efficiency. Valvular heart disease involves problems with the heart's valves, leading to improper blood flow. Hypertension, or high blood pressure, is a key risk factor for heart disease. Atherosclerosis involves the accumulation of fatty plaques in arteries, potentially leading to blockages.
                         <br/><br/>
-                        Today Cardiology treatment in India has come up as a suitable option in order to get rid of any of the heart defects as the cost in India of any of the treatments is the best and that too at rates that are absolutely affordable. Because of these benefits of choosing in India, any of the treatments, many foreigners have come down here in order to solve their trouble with heart diseases.
+                        Cardiologists use diagnostic tools like electrocardiograms (EKG), echocardiograms, and stress tests to assess heart health. Treatment may involve lifestyle changes, medications, surgical interventions, or other therapies aimed at managing and preventing cardiovascular conditions, improving patient outcomes, and enhancing quality of life.
                     </p>
+                    </Box>
                 </Stack>
             </Stack>
         </>

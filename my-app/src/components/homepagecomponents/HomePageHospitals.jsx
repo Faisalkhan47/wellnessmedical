@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'primereact/card';
 import { Link } from 'react-router-dom';
+import { Box } from '@mui/material';
 
 const hospitalsData = [
   {
@@ -39,7 +40,6 @@ const hospitalsData = [
     image: "https://i.imghippo.com/files/jjZE2384CsM.jpg",
     link: "http://your-link-here.com"
   },
-
 ];
 
 export default function HomePageHospitals() {
@@ -48,9 +48,9 @@ export default function HomePageHospitals() {
     <>
       {hospitalsData.slice(0, window.innerWidth >= 960 ? 6 : 4).map((hospital, index) => (
         <Link to={hospital.link} key={index} style={{ textDecoration: 'none' }}>
-          <div
-            className="card flex justify-content-center"
-            style={{
+          <Box
+            className="card flex justify-content-center animated-card"
+            sx={{
               boxShadow: 'rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px',
             }}
           >
@@ -66,10 +66,9 @@ export default function HomePageHospitals() {
                 <p>{hospital.location}</p>
               </div>
             </Card>
-          </div>
-
+          </Box>
         </Link>
       ))}
     </>
-  )
+  );
 }

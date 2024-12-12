@@ -6,18 +6,13 @@ const DoctorsDetails = require('./doctordetails.model')
 
 
  async function addHospital (req, res) {
-    const {name,beds,icubeds,airportdistance,about1,about2,about3,about4,about5,image,detail} = req.body;
+    const {name,beds,icubeds,airportdistance,image,detail} = req.body;
     try {
         const newHospitalList = new Hospital({
             name,
             beds,
             icubeds,
             airportdistance,
-            about1,
-            about2,
-            about3,
-            about4,
-            about5,
             image,
             detail
         })
@@ -142,7 +137,7 @@ const DoctorsDetails = require('./doctordetails.model')
  }
 
  async function addDoctors (req, res) {
-    const {doctorname,specialist,experience,hospital,gender,doctorimage} = req.body;
+    const {doctorname,specialist,experience,hospital,gender,doctorimage,detail} = req.body;
     try {
         const newDoctorsList = new DoctorsList({
             doctorimage,
@@ -150,7 +145,8 @@ const DoctorsDetails = require('./doctordetails.model')
             specialist,
             experience,
             hospital,
-            gender
+            gender,
+            detail
         })
 
         const savedDoctorsList = await newDoctorsList.save();
@@ -255,7 +251,7 @@ const DoctorsDetails = require('./doctordetails.model')
  }
  async function getAllDoctorDetails(req,res) {
     try {  
-        const doctordetails = await DoctorsDetail.findById(req.params.doctorid);
+        const doctordetails = await DoctorsDetails.findById(req.params.doctorid);
         res.json(doctordetails);
       
     } catch (error) {

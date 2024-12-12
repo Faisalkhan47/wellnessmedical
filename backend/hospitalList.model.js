@@ -17,26 +17,6 @@ const HospitalSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    about1: {
-        type: String,
-        required: true,
-    },
-    about2: {
-        type: String,
-        required: true,
-    },
-    about3: {
-        type: String,
-        required: true,
-    },
-    about4: {
-        type: String,
-        required: true,
-    },
-    about5: {
-        type: String,
-        required: true,
-    },
     image: {
         type: String,
         required: true,

@@ -1,92 +1,153 @@
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import gastricSleeveTreatment from './gastricSleeveTreatment.jpg'
 
 export default function GastricSleeveTreatment() {
     return (
         <>
-            <Stack >
-                <Stack sx={{ marginTop: '14rem', color: 'rgb(20, 154, 137)', position: 'relative', backgroundColor: "rgb(231, 252, 255)" }}>
-                    <img
-                        style={{
-                            height: '18rem',
-                            width: '25rem',
+            <Stack sx={{ marginTop: "11rem", width: { xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" }, backgroundColor: "white"}}>
+                <Stack sx={{ marginTop: '4rem', color: 'rgb(20, 154, 137)', position: 'relative', width: { xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" }, flexDirection: { xs: "column", md: 'row' }}}>
+                <Box
+                        sx={{
                             position: 'absolute',
-                            top: '4rem',
-                            right: '7rem',
-                            margin: '1rem'
+                            top: { xs: "-3rem", sm: "-1rem", md: "3rem", lg: '3rem' },
+                            right: { sm: "18rem", md: "-4rem", lg: '2rem' },
+                            margin: '1rem',
+                            width: { xs: '80%', sm: '80%', md: '25rem' },
+                            height: 'auto',
+                            objectFit: 'contain',
                         }}
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe-ogOa3REoeFYRVvLKb-sjgn6eYogGLh5Rg&s"
-                        alt=""
-                        srcSet=""
-                    />
-                    <h2 style={{ marginLeft: '3rem', fontWeight: 'bold', marginTop: '2rem' }}>Gastric Sleeve Treatment</h2>
-                    <p style={{ width: '45rem', marginLeft: '3rem', textAlign: 'start', marginTop: '1rem' }}>
-                    In gastric sleeve surgery, a surgeon removes part of the stomach and makes a narrow tube or "sleeve" out of the rest. The new, banana-shaped stomach is much smaller than the original stomach. Part of the stomach that's removed makes hormones that increase appetite and help control insulin. So, after surgery a person's appetite decreases and their insulin resistance gets better.
+                    >
+                        <img
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                            }}
+                            src={gastricSleeveTreatment}
+                            alt=""
+                        />
+                    </Box>
+                    <Box sx={{ marginTop: { xs: '13rem', sm: "13rem", md: '0rem' }, width: { xs: "100%", sm: "70%", md: "50%", lg: "60%", xl: "60%" }, marginLeft: { xs: '1rem', md: '3rem' } }}>
+                    <h3 style={{color: 'black', fontWeight: 'bold', marginTop: '2rem' }}>Gastric Sleeve Treatment</h3>
+                    <p style={{ color: 'black', textAlign: 'start', marginTop: '1rem' }}>
+                    Gastric sleeve treatment, or laparoscopic sleeve gastrectomy, is a surgical weight loss procedure that involves removing a portion of the stomach, creating a smaller, banana-shaped stomach pouch to restrict food intake.
                     </p>
+                    </Box>
                 </Stack>
-                <Stack sx={{ marginLeft: '5rem', marginTop: '2rem', width: '50%' }}>
-                    <div>
-                        <h2>About</h2>
-                        <p>Gastric balloon placement is a weight-loss procedure that involves placing a saline-filled silicone balloon into the stomach. This help to loose weight by limiting the amount of food you can eat and making you feel fuller faster.</p>
+                <Stack sx={{ marginLeft: { xs: "1rem", md: '4rem' }, marginTop: '1rem', width: { xs: "100%", sm: "100%", md: "50%", lg: "60%", xl: "60%" } }}>
+                <div>
+                        <h3>About</h3>
+                        <p>By reducing stomach size, gastric sleeve limits the amount of food that can be consumed. This leads to weight loss through portion control and changes in hormonal signals related to appetite.</p>
                     </div>
                     <div>
-                        <h2>Signs & Symptoms</h2>
-                        <p>The reasons of going through gastric balloons can be:</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Being overweight</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Weight relate health issues</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Fatigue and lay lifestyle</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; BMI more than 30</p>
+                        <h3>Signs & Symptoms</h3>
+                        <p>The reasons of going through Gastric Sleeve can be:</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Hypertension </p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Osteoarthritis</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Fatigue and lack of energy.
+                        </p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Depression or anxiety related to body image and health concerns.
+                        </p>
                     </div>
                     <div>
-                        <h2>Causes</h2>
+                        <h3>Causes</h3>
                         <p>The causes are:</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Not able to loose weight</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Falling ill easily</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Gastroesophageal reflux disease</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; High cholesterol</p>
-                        <p style={{marginTop:"-1rem"}} >&#x2022; Heart diseases</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; High blood pressure</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Stress and Anxiety</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Genetics</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Poor Diet Choices</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Food Accessibility
+                        </p>
+                        <p style={{marginTop:"-1rem"}} >&#x2022; Depression</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Childhood Obesity</p>
                     </div>
                     <div>
-                        <h2>When to seek medical attention?</h2>
-                        <p>An intragastric balloon may be an option for you if:</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; You're willing to commit to healthy lifestyle changes, get regular medical follow-up and participate in behavioral therapy</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; You have not had any previous stomach or esophageal surgery</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Intragastric balloons aren't the right choice for everyone who is overweight. A screening process will help your doctor see if the procedure might be beneficial for you.</p>
+                        <h3>When to seek medical attention?</h3>
+                        <p>Below are key signs and situations that indicate it may be time to consult a healthcare provider about potential treatments, including gastric sleeve surgery:</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Elevated blood sugar levels (type 2 diabetes).</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Loud snoring or choking episodes during sleep.
+                        </p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Chronic acid reflux or severe heartburn.
+                        </p>
                     </div>
                     <div>
-                        <h2>Risk Factors</h2>
-                        <p>Issues mentioned below can arise after gastric balloon treatment:</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Excessive bleeding.</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Breathing problems.</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Blood clots.</p>
+                        <h3>Risk Factors</h3>
+                        <p>Issues mentioned below can arise after Gastric Sleeve Treatment</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Sleep Deprivation</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Physical Inactivity</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; History of Trauma or Abuse</p>
                     </div>
                     <div>
-                        <h2>Diagnostic & Test</h2>
-                        <p>Chest X-rays</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Electrocardiogram </p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Blood Test</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Cardiac echo</p>
+                        <h3>Diagnostic & Test</h3>
+                        <p>&#x2022; Blood Tests</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Ultrasound</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Chest X-Ray or EKG (Electrocardiogram)</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Polysomnography</p>
                     </div>
                     <div>
-                        <h2>Treatment Procedure</h2>
-                        <p>During the gastric balloon procedure, a soft balloon (about the size of a grapefruit) is inserted into your stomach through your mouth, using an endoscope (a thin, flexible telescope). The balloon is then filled with saline to partially fill the stomach, allowing you to more easily control your portion sizes. You will be sedated during the procedure, which takes about 20 to 30 minutes. Most patients are able to go home the same day. At six months, the balloon is removed and your Virginia Mason support team will continue to guide you toward making healthy lifestyle choices in your nutrition and activity. The program they design for you will be essential to help you overcome the challenges of achieving your weight loss goals.</p>
-                        
+                        <h3>Treatment Procedure</h3>
+                        <p>Gastric sleeve surgery involves removing about 75-80% of the stomach, leaving a smaller, sleeve-shaped stomach. This reduces food intake and appetite by limiting capacity and lowering hunger hormones. The procedure is performed laparoscopically under general anesthesia, requiring small abdominal incisions. Patients typically stay in the hospital for 1-2 days. After surgery, a liquid diet is introduced, gradually progressing to soft and solid foods. Lifelong dietary changes, supplements, and regular follow-ups are necessary to prevent nutritional deficiencies. Gastric sleeve surgery helps achieve significant weight loss and improve obesity-related health conditions but requires commitment to a healthy lifestyle for long-term success.</p>
                     </div>
                     <div>
-                        <h2>Outcome & Recovery</h2>
-                        <p>The recovery time depends on the patient, procedure & severity.</p>
+                        <h3>Choosing the Right Procedure for You</h3>
+                        <p>Health Assessment:</p>
+                        <p style={{ marginTop: "-1rem" }}>&#x2022; Evaluate obesity severity using BMI and related conditions (e.g., diabetes, hypertension).
+                        </p>
+                        <p style={{ marginTop: "-1rem" }}>Weight Loss Goals:</p>
+                        <p style={{ marginTop: "-1rem" }}>&#x2022; Gastric sleeve offers significant and sustained weight loss with fewer long-term complications than gastric bypass.
+                        </p>
+                        <p style={{ marginTop: "-1rem" }}>Lifestyle Fit:</p>
+                        <p style={{ marginTop: "-1rem" }}>&#x2022; Consider post-surgery dietary requirements, exercise habits, and ability to follow medical advice.
+                        </p>
+                        <p style={{ marginTop: "-1rem" }}>Medical History:</p>
+                        <p style={{ marginTop: "-1rem" }}>&#x2022; Past surgeries, medications, and other conditions may influence suitability for certain procedures.
+                        </p>
+                        <p style={{ marginTop: "-1rem" }}>Surgeon's Recommendation:</p>
+                        <p style={{ marginTop: "-1rem" }}>&#x2022; A bariatric specialist can guide you based on a multidisciplinary evaluation.
+                        </p>
                     </div>
                     <div>
-                        <h2>Success Rate</h2>
+                        <h3>Outcome & Recovery</h3>
+                        <p>Gastric sleeve surgery aids weight loss, improves health, reduces stomach size, and requires lifelong lifestyle changes.</p>
+                    </div>
+                    <div>
+                        <h3>Success Rate</h3>
                         <p>The success rate has many factors depending on it, like the stage of the condition, the age of the patient, and the complication of the procedure.</p>
                     </div>
                     <div>
-                        <h2>Do’s & Don’ts</h2>
-                        <p>Issues mentioned below can arise after gastric balloon treatment:</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Avoid smoking</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Avoid alcohol</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Eat fruits and vegetables</p>
-                        <p style={{marginTop:"-1rem"}}>&#x2022; Avoid skipping meals</p>
+                        <h3>Do’s & Don’ts</h3>
+                        <p>Issues mentioned below can arise after Gastric Sleeve Treatment:</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Follow your surgeon’s dietary guidelines</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Focus on high-protein foods</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Do not eat large portions</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Avoid strenuous exercise</p>
+                    </div>
+                    <div>
+                        <h3>Common Questions About Gastric Sleeve Treatment</h3>
+                        <p>How does gastric sleeve treatment promote weight loss?</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Gastric sleeve restricts the stomach size, limiting food intake and inducing weight loss through portion control.</p>
+                        <p style={{marginTop:"-1rem"}}>Is gastric sleeve treatment reversible?</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; No, gastric sleeve is not reversible as a significant portion of the stomach is permanently removed.</p>
+                        <p style={{marginTop:"-1rem"}}>What is the expected weight loss with gastric sleeve treatment?</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Weight loss varies, but individuals may lose a significant amount, often reaching or exceeding 50-60% of excess weight.</p>
+                        <p style={{marginTop:"-1rem"}}>Is gastric sleeve treatment painful?</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Discomfort after surgery is common, but pain is generally manageable with medications.</p>
+                        <p style={{marginTop:"-1rem"}}>Can I eat normally after gastric sleeve treatment?</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; While the stomach capacity is reduced, individuals can eat normal foods in smaller portions, following dietary guidelines.</p>
+                    </div>
+                    <div>
+                        <h3>Myths and Facts About Gastric Sleeve Treatment</h3>
+                        <p>Myth: Gastric sleeve treatment is only for cosmetic weight loss.</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Fact: Gastric sleeve addresses obesity-related health issues, leading to improvements or resolution of conditions like diabetes and hypertension.</p>
+                        <p style={{marginTop:"-1rem"}}>Myth: Gastric sleeve is a shortcut for quick weight loss without effort.</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Fact: Successful outcomes require commitment to lifelong lifestyle changes, including dietary modifications and regular exercise.</p>
+                        <p style={{marginTop:"-1rem"}}>Myth: Gastric sleeve leads to constant malnutrition.</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Fact: Gastric sleeve does not involve malabsorption, and nutritional deficiencies are less common with proper dietary guidance and supplementation.</p>
+                        <p style={{marginTop:"-1rem"}}>Myth: Gastric sleeve treatment is extremely risky and dangerous.</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Fact: While all surgeries carry some risks, gastric sleeve is generally considered safe when performed by experienced surgeons in appropriate candidates.</p>
+                        <p style={{marginTop:"-1rem"}}>Myth: I won't be able to enjoy food after gastric sleeve treatment.</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Fact: While portion sizes are reduced, individuals can still enjoy a variety of foods, albeit in smaller amounts, and often find a new appreciation for healthier options.</p>
+                        <p style={{marginTop:"-1rem"}}>Myth: Gastric sleeve is a last resort for only extremely obese individuals.</p>
+                        <p style={{marginTop:"-1rem"}}>&#x2022; Fact: It is recommended for individuals with a BMI of 40 or higher, but those with a BMI between 35 and 40 with obesity-related health issues may also be considered.</p>
                     </div>
                 </Stack>
             </Stack>

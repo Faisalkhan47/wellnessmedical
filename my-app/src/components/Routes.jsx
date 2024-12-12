@@ -722,6 +722,7 @@ export default function MyRoutes() {
           <Route path="/hospitals" element={<HospitalList />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/hospital/details/:hospitalid" element={<HospitalDetails/>}/>
+          <Route path="/doctor/details/:doctorid" element={<DoctorsDetails/>}/>
           <Route path="/treatments/category/colposcopy" element={<Colposcopy/>}/>
           <Route path="/treatments/category/neurosurgery" element={<NeurosurgeryMain/>}/>
           <Route path="/treatments/category/thoracostomy" element={<Thoracostomy/>}/>
@@ -1421,7 +1422,6 @@ export default function MyRoutes() {
           <Route path="/treatments/category/surgery_for_transposition_of_the_great_arteries" element={<SurgeryforTranspositionoftheGreatArteries/>}/>
           <Route path="/treatments/category/abdominal_aortic_aneurysm_repair" element={<AbdominalAorticAneurysmRepair/>}/>
           <Route path="/doctors" element={<DoctorsList/>}/>
-          <Route path="/dr-balbir-singh" element={<DoctorsDetails/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

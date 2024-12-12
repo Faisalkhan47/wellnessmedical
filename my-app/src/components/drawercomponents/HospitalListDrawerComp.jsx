@@ -6,7 +6,7 @@ export default function HospitalListDrawerComp() {
     return (
         <>
             <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)} >
-            <h5 style={{ marginTop: '1rem', fontWeight: 'bold',color:"black",marginLeft:'0.5rem' }}>Filter by </h5>
+            <h5 style={{ marginTop: '3rem', fontWeight: 'bold',color:"black",marginLeft:'0.5rem' }}>Filter by </h5>
                 <List sx={{ width: "10rem",marginTop:"-0.5rem",backgroundColor:"white" }}>
                     <ListItemButton>
                         <ListItemIcon>
